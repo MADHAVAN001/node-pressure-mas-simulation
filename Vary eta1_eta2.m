@@ -90,7 +90,10 @@ for total_num_vehicles = 5:step:150
     X_summation_1 = X_summation;
     X_summation_2 = X_summation;
     X_summation_3 = X_summation;
-    
+    Xmatrix_1 = Xmatrix;
+    Xmatrix_3 = Xmatrix;
+    Xmatrix_2 = Xmatrix;
+        
     for j = 1:20
         X_summation_1 = sum(Xmatrix_1,2);
         X_summation_2 = sum(Xmatrix_2,2);
@@ -106,7 +109,7 @@ for total_num_vehicles = 5:step:150
         traffic_3 = traffic_3 - node_capacity_matrix;
 %         
         
-        for k = number_vehicles_eta+1:num_nodes
+        for k = number_nodes_eta+1:num_nodes
             if(traffic_1(k,1)<0)
                  node_pressure_type1(k,1) = node_pressure_type1(k,1) + alpha* traffic_1(k,1);
                 node_pressure_type3(k,1) = node_pressure_type3(k,1) + alpha * exp(traffic_3(k,1));
